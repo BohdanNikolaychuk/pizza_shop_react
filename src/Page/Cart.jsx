@@ -1,9 +1,8 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
-const Header = () => {
+const Cart = () => {
   return (
-    <div>
+    <div className="wrapper">
       <div className="header">
         <div className="container">
           <div className="header__logo">
@@ -13,7 +12,7 @@ const Header = () => {
             </div>
           </div>
           <div className="header__cart">
-            <Link to={'cart'} className="button button--cart">
+            <div className="button button--cart">
               <span>520 $</span>
               <div className="button__delimiter"></div>
               <svg
@@ -45,6 +44,21 @@ const Header = () => {
                 />
               </svg>
               <span>3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content">
+        <div className="container container--cart">
+          <div className="cart cart--empty">
+            <h2>Cart empty</h2>
+            <p>
+              Chances are you haven't ordered pizza yet. <br />
+              To order pizza, go to the main page.
+            </p>
+            <img src="/img/empty-cart.png" alt="Empty cart" />
+            <Link to={'/'} className="button button--black">
+              <span>Come back</span>
             </Link>
           </div>
         </div>
@@ -53,4 +67,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Cart;

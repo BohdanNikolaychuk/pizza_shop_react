@@ -8,7 +8,7 @@ const Categories = () => {
     <div className="categories">
       <ul>
         {arrayOfCategories.map((element, i) => (
-          <li onClick={() => setCategories(i)} className={categories === i ? 'active' : ''}>
+          <li key={i} onClick={() => setCategories(i)} className={categories === i ? 'active' : ''}>
             {element}
           </li>
         ))}

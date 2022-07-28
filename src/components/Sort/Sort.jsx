@@ -4,10 +4,10 @@ export default function Sort() {
   const sortingArray = ['popularity', 'price', 'alphabet'];
   const [show, setShow] = React.useState(false);
   const [sort, setSort] = React.useState('popularity');
-  console.log(sort);
+
   return (
     <div className="sort">
-      <div onClick={() => setShow((value) => !value)} className="sort__label">
+      <div onClick={() => setShow(!show)} className="sort__label">
         <svg
           width="10"
           height="6"
@@ -26,7 +26,13 @@ export default function Sort() {
         <div className="sort__popup">
           <ul>
             {sortingArray.map((element, i) => (
-              <li onClick={() => setSort(element)} className={sort === element ? 'active' : ''}>
+              <li
+                key={i}
+                onClick={() => {
+                  setSort(element);
+                  setShow(false);
+                }}
+                className={sort === element ? 'active' : ''}>
                 {element}
               </li>
             ))}
