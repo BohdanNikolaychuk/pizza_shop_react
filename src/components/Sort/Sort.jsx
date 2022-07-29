@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function Sort({ sort, setSort }) {
   const sortingArray = [
-    { name: 'popularity', sort: 'rating' },
-    { name: 'price', sort: 'price' },
-    { name: 'alphabet', sort: 'title' },
+    { name: 'popularity', sorting: 'rating' },
+    { name: 'price', sorting: 'price' },
+    { name: 'alphabet', sorting: 'title' },
   ];
   const [show, setShow] = React.useState(false);
 
@@ -35,7 +35,7 @@ export default function Sort({ sort, setSort }) {
                   setSort(obj);
                   setShow(false);
                 }}
-                className={sort.sort === obj.sort ? 'active' : ''}>
+                className={sort.sorting === obj.sorting ? 'active' : ''}>
                 {obj.name}
               </li>
             ))}
