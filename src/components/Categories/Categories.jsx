@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Categories = () => {
+const Categories = ({ categories, setCategories }) => {
   const arrayOfCategories = ['All', 'Meat', 'Vegetarian', 'Grill', 'Acute', 'Closed'];
-  const [categories, setCategories] = React.useState(0);
 
   return (
     <div className="categories">

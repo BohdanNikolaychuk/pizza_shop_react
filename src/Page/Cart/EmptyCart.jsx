@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const Cart = () => {
+const EmptyCart = () => {
   return (
     <div className="wrapper">
       <div className="header">
@@ -67,4 +67,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default EmptyCart;

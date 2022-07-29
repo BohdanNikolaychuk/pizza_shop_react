@@ -1,9 +1,12 @@
 import React from 'react';
 
-export default function Sort() {
-  const sortingArray = ['popularity', 'price', 'alphabet'];
+export default function Sort({ sort, setSort }) {
+  const sortingArray = [
+    { name: 'popularity', sort: 'rating' },
+    { name: 'price', sort: 'price' },
+    { name: 'alphabet', sort: 'title' },
+  ];
   const [show, setShow] = React.useState(false);
-  const [sort, setSort] = React.useState('popularity');
 
   return (
     <div className="sort">
@@ -20,20 +23,20 @@ export default function Sort() {
           />
         </svg>
         <b>Sort by:</b>
-        <span>{sort}</span>
+        <span>{sort.name}</span>
       </div>
       {show && (
         <div className="sort__popup">
           <ul>
-            {sortingArray.map((element, i) => (
+            {sortingArray.map((obj, i) => (
               <li
                 key={i}
                 onClick={() => {
-                  setSort(element);
+                  setSort(obj);
                   setShow(false);
                 }}
-                className={sort === element ? 'active' : ''}>
-                {element}
+                className={sort.sort === obj.sort ? 'active' : ''}>
+                {obj.name}
               </li>
             ))}
           </ul>
