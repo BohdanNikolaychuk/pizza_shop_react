@@ -1,6 +1,6 @@
 import React from 'react';
-import Cart from '../../page/Cart/Cart';
-import Home from '../../page/Home/Home';
+import Cart from '../../Page/Cart/Cart';
+import Home from '../../Page/Home/Home';
 import { Routes, Route, Navigate } from 'react-router-dom';
 export const PizzaContext = React.createContext();
 const AppRouter = () => {
