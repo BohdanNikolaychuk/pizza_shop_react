@@ -1,13 +1,20 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSort } from '../../store/slices/filterSlice';
 
-export default function Sort({ sort, setSort }) {
+export default function Sort() {
+  const dispatch = useDispatch();
+  const sort = useSelector((state) => state.filterSlice.sort);
   const sortingArray = [
     { name: 'popularity', sorting: 'rating' },
     { name: 'price', sorting: 'price' },
     { name: 'alphabet', sorting: 'title' },
   ];
   const [show, setShow] = React.useState(false);
-
+  const onClickItem = (obj) => {
+    dispatch(setSort(obj));
+    setShow(false);
+  };
   return (
     <div className="sort">
       <div onClick={() => setShow(!show)} className="sort__label">
@@ -31,10 +38,7 @@ export default function Sort({ sort, setSort }) {
             {sortingArray.map((obj, i) => (
               <li
                 key={i}
-                onClick={() => {
-                  setSort(obj);
-                  setShow(false);
-                }}
+                onClick={() => onClickItem(obj)}
                 className={sort.sorting === obj.sorting ? 'active' : ''}>
                 {obj.name}
               </li>
