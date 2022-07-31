@@ -1,16 +1,10 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Home from './Page/Home/Home';
+import AppRouter from './components/AppRouter/AppRouter';
+
 import './scss/app.scss';
-import Cart from './Page/Cart/Cart';
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/cart" element={<Cart />} />
-    </Routes>
-  );
+  return <AppRouter />;
 }
 
 export default App;
