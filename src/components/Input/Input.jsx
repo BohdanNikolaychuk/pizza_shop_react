@@ -1,16 +1,22 @@
 import React from 'react';
 import style from '../Input/Input.module.scss';
-import { PizzaContext } from '../AppRouter/AppRouter';
+
+//redux
+import { useDispatch } from 'react-redux';
+import { setSearchValue } from '../../store/slices/filterSlice';
+import { useSelector } from 'react-redux';
+
 const Input = () => {
-  const { searctValue, setSearctValue } = React.useContext(PizzaContext);
+  const dispatch = useDispatch();
+  const { searchValue } = useSelector((state) => state.filterSlice);
   return (
     <div>
       <input
-        onChange={(event) => setSearctValue(event.target.value)}
+        onChange={(event) => dispatch(setSearchValue(event.target.value))}
         className={style.input}
         type="text"
         placeholder="Seatch your pizza"
-        value={searctValue}
+        value={searchValue}
       />
     </div>
   );
