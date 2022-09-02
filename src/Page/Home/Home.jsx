@@ -24,7 +24,7 @@ function Home() {
 
     React.useEffect(() => {
         setLoading(true);
-        dispatch(fetchPizzaItems(categories, sort, searctValue))
+        dispatch(fetchPizzaItems({categories, sort, searctValue}))
     }, [categories, sort, searctValue]);
 
     return (
