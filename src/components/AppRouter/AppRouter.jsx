@@ -2,18 +2,14 @@ import React from 'react';
 import Cart from '../../Page/Cart/Cart';
 import Home from '../../Page/Home/Home';
 import { Routes, Route, Navigate } from 'react-router-dom';
-export const PizzaContext = React.createContext();
-const AppRouter = () => {
-  const [searctValue, setSearctValue] = React.useState('');
 
+const AppRouter = () => {
   return (
-    <PizzaContext.Provider value={{ searctValue, setSearctValue }}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </PizzaContext.Provider>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   );
 };
 
