@@ -1,4 +1,3 @@
-import React from 'react';
 import style from '../Input/Input.module.scss';
 
 //redux
@@ -8,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 const Input = () => {
   const dispatch = useDispatch();
-  const { searchValue } = useSelector((state) => state.filterSlice);
+  const { searchValue } = useSelector((state: any) => state.filterSlice);
   return (
     <div>
       <input
