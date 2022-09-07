@@ -15,7 +15,7 @@ const Input = () => {
         onChange={(event) => dispatch(setSearchValue(event.target.value))}
         className={style.input}
         type="text"
-        placeholder="Seatch your pizza"
+        placeholder="Seartch your pizza"
         value={searchValue}
       />
     </div>

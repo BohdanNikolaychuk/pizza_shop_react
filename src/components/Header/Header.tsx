@@ -1,10 +1,9 @@
-import React from 'react';
 import Input from '../Input/Input';
 import { Link } from 'react-router-dom';
-import {useSelector} from "react-redux";
+import { useSelector } from 'react-redux';
 
 const Header = () => {
-    const {items,totalPrice} = useSelector(state=>state.cartSlice);
+  const { items, totalPrice } = useSelector((state: any) => state.cartSlice);
 
   return (
     <div>

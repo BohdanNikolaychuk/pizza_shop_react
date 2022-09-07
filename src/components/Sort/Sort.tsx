@@ -1,17 +1,19 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSort } from '../../store/slices/filterSlice';
+import SortingArray from '../../types/SortingArray';
 
 export default function Sort() {
   const dispatch = useDispatch();
-  const sort = useSelector((state) => state.filterSlice.sort);
-  const sortingArray = [
+  const sort = useSelector((state: any) => state.filterSlice.sort);
+  const sortingArray: SortingArray[] = [
     { name: 'popularity', sorting: 'rating' },
     { name: 'price', sorting: 'price' },
     { name: 'alphabet', sorting: 'title' },
   ];
   const [show, setShow] = React.useState(false);
-  const onClickItem = (obj) => {
+
+  const onClickItem = (obj: SortingArray) => {
     dispatch(setSort(obj));
     setShow(false);
   };
