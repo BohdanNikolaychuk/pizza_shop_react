@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PizzaBlockType from '../../@types/PizzaBlock';
+import PizzaBlockType from '../../@types/PizzaBlock.interface';
 import { addPizzaToCart } from '../../store/slices/cartSlice';
 
 const PizzaBlock: React.FC<PizzaBlockType> = ({ id, title, price, imageUrl, sizes, types }) => {

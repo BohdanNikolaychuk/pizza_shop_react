@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSort } from '../../store/slices/filterSlice';
-import SortingArray from '../../@types/SortingArray';
+import SortingArray from '../../@types/SortingArray.interface';
 
 export default function Sort() {
   const dispatch = useDispatch();

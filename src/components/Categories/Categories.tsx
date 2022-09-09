@@ -1,4 +1,4 @@
-import CategoriesType from '../../@types/Categories';
+import CategoriesType from '../../@types/Categories.interface';
 
 const Categories: React.FC<CategoriesType> = ({ categories, setCategories }) => {
   const arrayOfCategories = ['All', 'Meat', 'Vegetarian', 'Grill', 'Acute', 'Closed'];
